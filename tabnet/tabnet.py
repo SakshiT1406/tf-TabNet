@@ -104,6 +104,7 @@ class TabNet(tf.keras.Model):
             num_groups: Number of groups used for group normalization.
             epsilon: A small number for numerical stability of the entropy calculations.
         """
+        tf.compat.v1.disable_eager_execution()
         super(TabNet, self).__init__(**kwargs)
         if random_state is not None:
             tf.keras.utils.set_random_seed(random_state)
